@@ -1,11 +1,12 @@
 package com.example.nycschools.retrofit
 
-import com.example.nycschools.model.SchoolModel
+import com.example.nycschools.model.ArtistModel
 import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface API {
 
-    @GET("s3k6-pzi2.json")
-    fun getSchools(): Observable<List<SchoolModel>>
+    @GET("search")
+    fun getArtists(@Query("term") artistName: String): Observable<ArtistModel>
 }
